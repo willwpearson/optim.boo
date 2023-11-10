@@ -22,12 +22,10 @@ export default NextAuth({
     ],
     callbacks: {
         async session({ session, token }) {
-            console.log('Session Callback:', session, token)
             session.accessToken = token.accessToken
             return session
         },
         async jwt({ token, user }) {
-            console.log("JWT Callback:", token, user)
             if (user){
                 token.accessToken = user.accessToken
             }
