@@ -23,6 +23,6 @@ export default NextAuth({
         }
     },
     pages: {
-        signIn: '/index'
+        signIn: '/account/login'
     }
 })
