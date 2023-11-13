@@ -24,7 +24,7 @@ export default function Home(){
             {session && <main className='w-screen h-screen bg-gradient-to-b from-indigo-500 to-purple-800'>
                 <div className='w-full h-full flex justify-center items-center'>
                     <div className='w-1/3 h-1/2 bg-white rounded-lg shadow-lg flex justify-center items-center'>
-                        <h1 className='text-3xl'>Welcome to the secured home page, {session.user.name}!</h1>
+                        <h1 className='text-3xl'>Welcome to the secured home page!</h1>
                     </div>
                 </div>
             </main>}
