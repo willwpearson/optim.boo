@@ -8,13 +8,10 @@ export default function Home(){
 
     // Redirect to the login page if the session is not authenticated.
     useEffect(()=> {
-        if(status === 'authenticated') {
-            // User is authenticated, proceed with render.
-            return
+        if(status !== 'authenticated') {
+            // Redirect if not authenticated.
+            router.push('/account/login')
         }
-
-        // Redirect if not authenticated.
-        router.push('/account/login')
     }, [status, router])
 
     // Loading state
