@@ -4,16 +4,6 @@ import GithubProvider from 'next-auth/providers/github'
 
 export default NextAuth({
     providers: [
-        DuendeIDS6Provider({
-            id: 'identity-server',
-            name: 'IdentityServer',
-            authorization: {
-                params: { scope: 'openid profile api1' },
-            },
-            issuer: 'https://',
-            clientId: 'optim.boo',
-            clientSecret: 'secret'
-        }),
         GithubProvider({
             id: 'github',
             clientId: process.env.GITHUB_CLIENT_ID,
