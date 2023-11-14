@@ -52,7 +52,7 @@ export default function LoginPage() {
     return (
         <main className='w-screen h-screen bg-gradient-to-b from-purple-800 to-rose-500'>
             <div className='flex justify-center items-center w-full h-full'>
-                <div className="w-1/4 h-1/2 flex flex-col items-center justify-between py-4 bg-white rounded-lg shadow-lg">
+                <div className="w-1/4 min-h-1/2 flex flex-col items-center justify-between py-4 bg-white rounded-lg shadow-lg">
                     <div className="flex flex-col items-center">
                         <h1 className="text-6xl mb-2">Login</h1>
                         <LoginForm onSubmit={handleLogin} />
