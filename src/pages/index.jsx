@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
 export default function Home(){
@@ -24,7 +24,10 @@ export default function Home(){
             {session && <main className='w-screen h-screen bg-gradient-to-b from-indigo-500 to-purple-800'>
                 <div className='w-full h-full flex justify-center items-center'>
                     <div className='w-1/3 h-1/2 bg-white rounded-lg shadow-lg flex justify-center items-center'>
-                        <h1 className='text-3xl'>Welcome to the secured home page!</h1>
+                        <div className='flex flex-col items-center justify-between'>
+                            <h1 className='text-3xl my-4'>Welcome to the secured home page!</h1>
+                            <button className='p-2 rounded-lg border-2 border-black hover:bg-gray-200 shadow-lg' onClick={()=>signOut()}>Sign Out</button>
+                        </div>
                     </div>
                 </div>
             </main>}
