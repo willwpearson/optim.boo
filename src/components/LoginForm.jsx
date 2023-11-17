@@ -21,7 +21,7 @@ const LoginForm = ({ onSubmit }) => {
             <div className='flex flex-col my-4'>
                 <input className='rounded-lg my-2' type="text" value={username} placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
                 <input className='rounded-lg my-2' type="password" value={password} placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
-                <button className='border-2 border-black rounded-lg shadow-lg my-2 hover:bg-gray-200' type="submit">Login</button>
+                <button className='border-2 border-black rounded-lg shadow-lg my-2 p-2 hover:bg-gray-200' type="submit">Login</button>
             </div>
         </form>
     )

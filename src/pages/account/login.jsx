@@ -26,24 +26,7 @@ export default function LoginPage() {
      */
     const handleLogin = async (credentials) => {
         try {
-            await signIn('identity-server', credentials)
-            // const response = await fetch('http://localhost:5001', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type' : 'application/x-www-form-urlencoded',
-            //     },
-            //     body: new URLSearchParams({
-            //         grant_type: 'password',
-            //         client_id: 'optim.boo',
-            //         client_secret: 'secret',
-            //         username: credentials.username,
-            //         password: credentials.password
-            //     })
-            // })
-
-            // const data = await response.json()
-
-            // console.log(data)
+            await signIn('credentials', { ...credentials, redirect: false })
         } catch (error) {
             console.error('Authentication error: ', error)
         }
@@ -61,9 +44,6 @@ export default function LoginPage() {
                     <div className="flex flex-col items-center">
                         <h1 className="text-2xl">Other Login Options</h1>
                         <div className="flex flex-col m-4">
-                            <button className="m-2 p-2 border-2 border-purple-800 rounded-lg hover:bg-gray-200 text-purple-800" onClick={() => signIn('identity-server')}>
-                                Sign in with Duende
-                            </button>
                             <button className="m-2 p-2 border-2 border-purple-800 rounded-lg hover:bg-gray-200 text-purple-800" onClick={() => signIn('github')}>
                                 Sign in with Github
                             </button>
