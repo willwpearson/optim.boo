@@ -26,7 +26,7 @@ export default function Home(){
                     <div className='w-1/3 h-1/2 bg-white rounded-lg shadow-lg flex justify-center items-center'>
                         <div className='flex flex-col items-center justify-between'>
                             <h1 className='text-3xl my-4'>Welcome to the secured home page!</h1>
-                            <button className='p-2 rounded-lg border-2 border-black hover:bg-gray-200 shadow-lg' onClick={()=>signOut()}>Sign Out</button>
+                            <button className='p-2 rounded-lg shadow-md bg-indigo-700 hover:bg-indigo-900 text-white' onClick={()=>signOut()}>Sign Out</button>
                         </div>
                     </div>
                 </div>
