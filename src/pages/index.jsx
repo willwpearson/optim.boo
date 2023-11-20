@@ -16,9 +16,18 @@ export default function Home(){
 
     // Loading state
     if(status === 'loading'){
-        return <p>Loading...</p>
+        return (
+        <main className='w-screen h-screen bg-gradient-to-b from-purple-800 to-rose-500'>
+            <div className='w-full h-full flex justify-center items-center'>
+                <div className='w-1/4 h-1/4 bg-white rounded-lg shadow-lg flex justify-center items-center'>
+                    <p className='p-4 text-2xl'>Loading...</p>
+                </div>
+            </div>
+        </main>
+        )
     }
 
+    // Main page content.
     return (
         <>
             {session && <main className='w-screen h-screen bg-gradient-to-b from-indigo-500 to-purple-800'>
