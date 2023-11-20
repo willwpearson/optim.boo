@@ -34,7 +34,7 @@ export default function RegisterPage() {
             setPassValid(false)
         } else {
             try {
-                const registrationResponse = await fetch("https://identity.optim.boo/api/registration", {
+                const registrationResponse = await fetch("http://identity.optim.boo/api/registration", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

@@ -14,7 +14,7 @@ export default NextAuth({
             },
             authorize: async (credentials) => {
                 try {
-                    const response = await fetch('https://identity.optim.boo/connect/token', {
+                    const response = await fetch('http://identity.optim.boo/connect/token', {
                         method: 'POST',
                         headers: {
                             'Content-Type' : 'application/x-www-form-urlencoded',
