@@ -16,9 +16,18 @@ export default function Home(){
 
     // Loading state
     if(status === 'loading'){
-        return <p>Loading...</p>
+        return (
+        <main className='w-screen h-screen bg-gradient-to-b from-purple-800 to-rose-500'>
+            <div className='w-full h-full flex justify-center items-center'>
+                <div className='w-1/4 h-1/4 bg-white rounded-lg shadow-lg flex justify-center items-center'>
+                    <p className='p-4 text-2xl'>Loading...</p>
+                </div>
+            </div>
+        </main>
+        )
     }
 
+    // Main page content.
     return (
         <>
             {session && <main className='w-screen h-screen bg-gradient-to-b from-indigo-500 to-purple-800'>
@@ -26,7 +35,7 @@ export default function Home(){
                     <div className='w-1/3 h-1/2 bg-white rounded-lg shadow-lg flex justify-center items-center'>
                         <div className='flex flex-col items-center justify-between'>
                             <h1 className='text-3xl my-4'>Welcome to the secured home page!</h1>
-                            <button className='p-2 rounded-lg border-2 border-black hover:bg-gray-200 shadow-lg' onClick={()=>signOut()}>Sign Out</button>
+                            <button className='p-2 rounded-lg shadow-md bg-indigo-700 hover:bg-indigo-900 text-white' onClick={()=>signOut()}>Sign Out</button>
                         </div>
                     </div>
                 </div>
