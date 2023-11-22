@@ -60,7 +60,7 @@ export default LoginForm
 
 This form takes in the inputs "username" and "password" and handles submission through it's parent component.
 
-Now, we want to create a login page. This is usually done in a `pages/accounts` directory, so create that now, and add the following `login.jsx` page to it:
+Now, we want to create a login page. This is usually done in a `pages/account` directory, so create that now, and add the following `login.jsx` page to it:
 
 ```javascript
 import { signIn } from "next-auth/react"
