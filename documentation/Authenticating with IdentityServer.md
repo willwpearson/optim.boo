@@ -154,7 +154,7 @@ export default NextAuth({
                             client_secret: process.env.DUENDE_IDS6_SECRET,
                             username: credentials.username,
                             password: credentials.password,
-                            scope:  "openid profile offline_access api1"
+                            scope:  "openid profile offline_access"
                         }),
                     })
         
