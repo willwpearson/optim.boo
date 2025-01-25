@@ -1,6 +1,5 @@
 'use client'
-import React, { useRef, useState, useCallback } from "react"
-import Router from "next/router"
+import React, { useRef, useState, useCallback, useEffect } from "react"
 import RouteList from "@/components/RouteList"
 import ContactModal from "@/components/ContactModal"
 import AboutModal from "@/components/AboutModal"
@@ -18,20 +17,20 @@ export default function Home() {
   }, [])
 
   const routes = useRef([
+    { name: "Projects", click: () => {
+      setTransitionDirection("up")
+      window.location.href = "/projects"
+    }},
     { name: "About Me", click: () => {
       setTimeout(() => setAboutMeOpen(true), 300)
       setRoutesOpen(false)
       setTransitionDirection("left")
     }},
-    { name: "Projects", click: () => {
-      setTransitionDirection("up")
-      Router.push("/projects")
-    }},
     { name: "Contact", click: () => {
       setTimeout(() => setContactInfoOpen(true), 300)
       setRoutesOpen(false)
       setTransitionDirection("right")
-    }},
+    }}
   ])
 
   return (
