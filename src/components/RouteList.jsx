@@ -20,7 +20,7 @@ export default function RouteList({ routes, isOpen, transitionDirection }) {
         >
             <div className="relative flex items-center justify-center w-full h-full">
                 <div className="absolute w-full h-full bg-gradient-to-b from-sunflowerLight/75 via-sunsetOrangeLight/75 to-violetLight/75 blur-md z-0"/>
-                <div className="bg-black w-[95%] h-[95%] p-8 rounded-xl flex flex-col items-center space-y-8 z-10">
+                <div className="bg-black w-[98%] h-[98%] p-8 rounded-xl flex flex-col items-center space-y-8 z-10">
                     {routes.map((route, index) => (
                         <div key={index} className="flex items-center justify-center w-full">
                             <button onClick={route.click}>
