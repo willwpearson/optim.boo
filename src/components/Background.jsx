@@ -24,7 +24,8 @@ export default function Background() {
 
         const specialStar = Math.floor(Math.random() * numStars);
         stars[specialStar].color = "yellow";
-        stars[specialStar].radius = 5;
+        stars[specialStar].radius = 2;
+        stars[specialStar].opacity = 1;
         setRedStar(stars[specialStar]);
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
