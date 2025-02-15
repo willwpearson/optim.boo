@@ -30,7 +30,7 @@ export default function Home() {
   ])
 
   return (
-    <main className="bg-gradient-to-b from-midnightDark via-plum to-sunsetOrangeDark w-screen h-screen flex items-center justify-center">
+    <main className="bg-gradient-to-b from-midnightDark via-plum to-sunsetOrangeDark w-screen min-h-screen flex items-center justify-center py-8">
       <div className="w-4/5 lg:w-2/5">
         <RouteList routes={routes.current} isOpen={routesOpen} transitionDirection={transitionDirection} />
         <ContactModal isOpen={contactInfoOpen} returnHome={returnHome} />

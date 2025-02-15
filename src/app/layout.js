@@ -7,7 +7,7 @@ const shareTech = Share_Tech({
 })
 
 export const metadata = {
-  title: "optim.boo",
+  title: "Optim",
   description: "A website created by Optim.",
 }
 

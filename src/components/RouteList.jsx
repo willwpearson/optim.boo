@@ -27,7 +27,7 @@ export default function RouteList({ routes, isOpen, transitionDirection }) {
                                 <h1 className={clsx([
                                     "text-center",
                                     route.name === "About Me" && "text-4xl text-sunsetOrangeLight hover:text-sunsetOrangeDark",
-                                    route.name === "Contact" && "text-2xl text-violet hover:text-violetDark"
+                                    route.name === "Contact" && "text-2xl text-sunflowerDark hover:text-sunflowerLight"
                                 ])}>{route.name}</h1>
                             </button>
                         </div>
