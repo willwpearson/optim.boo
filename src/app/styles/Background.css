@@ -1,0 +1,25 @@
+.background {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s infinite alternate;
+}
+
+.mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
