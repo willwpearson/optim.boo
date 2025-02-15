@@ -15,9 +15,11 @@ export default function AboutModal({ isOpen, returnHome }) {
             leaveFrom="translate-x-0 opacity-100"
             leaveTo="translate-x-full opacity-0"
         >
-            <div className="bg-black p-4 rounded-xl shadow-lg shadow-sunsetOrangeLight/75 flex flex-col items-center space-y-4">
-                <button className="text-center text-sunsetOrangeLight hover:text-sunsetOrangeDark text-3xl" onClick={() => returnHome()}>
-                    <h1>Return</h1>
+            <div className="flex flex-col items-center w-full">
+                <h1 className="text-center text-5xl text-violet shadow-violet rounded-lg">About Me</h1>
+
+                <button className="bg-black text-center text-sunflowerLight hover:text-sunflowerDark text-3xl shadow shadow-sunflowerLight hover:shadow-sunflowerDark p-2 rounded-lg" onClick={() => returnHome()}>
+                    <h1>Return Home</h1>
                 </button>
             </div>
         </Transition>
