@@ -6,6 +6,12 @@ export default function Game({ canvasRef }) {
     const [gameOver, setGameOver] = useState(false);
     const isDragging = useRef(false);
 
+    const handleGameRestart = () => {
+        setScore(0);
+        setGameStarted(false);
+        setGameOver(false);
+    }
+
     useEffect(() => {
         if (!gameStarted) return;
 
@@ -228,7 +234,7 @@ export default function Game({ canvasRef }) {
                 <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center space-y-4 bg-sunflowerLight text-black p-8 rounded-md'>
                     <p className='text-2xl text-center'>Game Over!</p>
                     <p className='text-lg text-center'>Final Score: {score}</p>
-                    <button onClick={() => window.location.reload()} className='bg-violet hover:bg-violetDark text-white px-2 py-1 rounded'>Restart</button>
+                    <button onClick={() => handleGameRestart()} className='bg-violet hover:bg-violetDark text-white px-2 py-1 rounded'>Restart</button>
                 </div>
             )}
         </div>
