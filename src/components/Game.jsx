@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 export default function Game({ canvasRef }) {
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
+    const isDragging = useRef(false);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -157,22 +158,26 @@ export default function Game({ canvasRef }) {
         };
 
         const handleTouchStart = (e) => {
-            const touchX = e.touches[0].clientX;
-            if (touchX < canvas.width / 2) {
-                keys.left = true;
-            } else {
-                keys.right = true;
+            isDragging.current = true;
+        };
+
+        const handleTouchMove = (e) => {
+            if (isDragging.current) {
+                const touchX = e.touches[0].clientX;
+                player.x = touchX - player.width / 2;
+                if (player.x < 0) player.x = 0;
+                if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
             }
         };
 
         const handleTouchEnd = (e) => {
-            keys.left = false;
-            keys.right = false;
+            isDragging.current = false;
         };
 
         window.addEventListener('keydown', handleKeyDown);
         window.addEventListener('keyup', handleKeyUp);
         canvas.addEventListener('touchstart', handleTouchStart);
+        canvas.addEventListener('touchmove', handleTouchMove);
         canvas.addEventListener('touchend', handleTouchEnd);
 
         gameLoop();
@@ -189,8 +194,9 @@ export default function Game({ canvasRef }) {
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
             window.removeEventListener('keyup', handleKeyUp);
-            canvas.removeEventListener('touchstart', handleTouchStart);
-            canvas.removeEventListener('touchend', handleTouchEnd);
+            canvas.removeEventListener('mousedown', handleTouchStart);
+            canvas.removeEventListener('mousemove', handleTouchMove);
+            canvas.removeEventListener('mouseup', handleTouchEnd);
             cancelAnimationFrame(animationFrameId);
             clearInterval(bulletIntervalId);
             clearInterval(enemyIntervalId);
