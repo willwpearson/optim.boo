@@ -219,7 +219,7 @@ export default function Game({ canvasRef }) {
             <div className='absolute top-0 text-white text-center text-xl mt-2'>Score: {score}</div>
             {!gameStarted && (
                 <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center space-y-4 bg-sunflowerLight text-black p-4 rounded-md'>
-                    <p className='text-2xl text-center'>Welcome to secret game!</p>
+                    <p className='text-2xl text-center'>Welcome to the secret game!</p>
                     <p className='text-lg text-center'>How high of a score can you get?</p>
                     <button onClick={() => setGameStarted(true)} className='bg-violet hover:bg-violetDark text-white px-2 py-1 rounded'>Start</button>
                 </div>
