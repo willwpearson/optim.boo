@@ -16,6 +16,12 @@ export default function Game({ canvasRef }) {
         let enemyIntervalId;
         let enemySpawnRate = 2000; // Initial spawn rate in milliseconds
 
+        // Load images
+        const playerImage = new Image();
+        playerImage.src = '/ship.png';
+        const enemyImage = new Image();
+        enemyImage.src = '/meteor.png';
+
         // Game variables
         const player = {
             x: canvas.width / 2 - 15,
@@ -35,7 +41,7 @@ export default function Game({ canvasRef }) {
 
         const drawPlayer = () => {
             context.fillStyle = 'white';
-            context.fillRect(player.x, player.y, player.width, player.height);
+            context.drawImage(playerImage, player.x, player.y, player.width, player.height);
         };
 
         const drawBullets = () => {
@@ -48,7 +54,7 @@ export default function Game({ canvasRef }) {
         const drawEnemies = () => {
             context.fillStyle = 'green';
             enemies.forEach(enemy => {
-                context.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
+                context.drawImage(enemyImage, enemy.x, enemy.y, enemy.width, enemy.height);
             });
         };
 
@@ -125,7 +131,7 @@ export default function Game({ canvasRef }) {
                 x: Math.random() * (canvas.width - 30),
                 y: 0,
                 width: 30,
-                height: 30,
+                height: 50,
                 dy: 2
             });
         };
