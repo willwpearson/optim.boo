@@ -54,7 +54,7 @@ export default function Background() {
         drawStars();
     }
     
-    const handleCanvasClick = (e) => {
+    const handleCanvasClick = async (e) => {
         if (redStar) {
             const x = e.clientX;
             const y = e.clientY;
@@ -63,7 +63,15 @@ export default function Background() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < redStar.radius * 5) {
-                window.location.href = "/secret";
+                try {
+                    const res = await fetch('/api/secret');
+                    const data = await res.json();
+                    if (data.access) {
+                        window.location.href = '/secret';
+                    }
+                } catch (error) {
+                    console.error('Failed to check access:', error);
+                }
             }
         }
     }

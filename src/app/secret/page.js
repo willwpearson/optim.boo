@@ -2,7 +2,18 @@
 import React, { useRef, useState, useCallback, useEffect } from "react"
 
 export default function Secret() {
+    const [access, setAccess] = useState(false);
     const canvasRef = useRef(null);
+
+    useEffect(() => {
+        const referrer = document.referrer;
+
+        if (referrer === process.env.NEXT_PUBLIC_BASE_URL + "/") {
+            setAccess(true);
+        } else {
+            window.location.href = process.env.NEXT_PUBLIC_BASE_URL;
+        }
+    }, []);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -88,7 +99,7 @@ export default function Secret() {
             canvas.removeEventListener('touchend', handleTouchEnd);
             cancelAnimationFrame(animationFrameId);
         };
-    }, []);
+    }, [access]);
 
     return (
         <main className="bg-gradient-to-b from-violetDark via-plum to-midnightDark w-screen h-screen flex items-end justify-center overflow-hidden overscroll-none pb-4">
