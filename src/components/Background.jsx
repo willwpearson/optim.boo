@@ -40,13 +40,21 @@ export default function Background() {
 
     const resizeCanvas = () => {
         const canvas = canvasRef.current;
+        const currentWidth = canvas.width;
+        const currentHeight = canvas.height;
+
+        // Check if the resize event is due to a zoom action
+        if (window.innerWidth === currentWidth && window.innerHeight === currentHeight) {
+            return;
+        }
+
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
         drawStars();
     }
-
-    const handleCanvasClick = (e) => {
+    
+    const handleCanvasClick = async (e) => {
         if (redStar) {
             const x = e.clientX;
             const y = e.clientY;
@@ -55,7 +63,15 @@ export default function Background() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < redStar.radius * 5) {
-                window.location.href = "/secret";
+                try {
+                    const res = await fetch('/api/secret');
+                    const data = await res.json();
+                    if (data.access) {
+                        window.location.href = '/secret';
+                    }
+                } catch (error) {
+                    console.error('Failed to check access:', error);
+                }
             }
         }
     }
