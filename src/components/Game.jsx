@@ -173,10 +173,12 @@ export default function Game({ canvasRef }) {
         };
 
         const handleTouchStart = (e) => {
+            e.preventDefault();
             isDragging.current = true;
         };
 
         const handleTouchMove = (e) => {
+            e.preventDefault();
             if (isDragging.current) {
                 const touchX = e.touches[0].clientX;
                 player.x = touchX - player.width / 2;
@@ -186,6 +188,7 @@ export default function Game({ canvasRef }) {
         };
 
         const handleTouchEnd = (e) => {
+            e.preventDefault();
             isDragging.current = false;
         };
 
