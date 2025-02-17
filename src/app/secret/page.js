@@ -1,4 +1,5 @@
 'use client'
+import Background from "@/components/Background";
 import Game from "@/components/Game";
 import React, { useRef, useState, useCallback, useEffect } from "react"
 
@@ -21,7 +22,10 @@ export default function Secret() {
 
     return (
         <main className="bg-gradient-to-b from-violetDark via-plum to-midnightDark w-screen h-screen flex items-end justify-center overflow-hidden overscroll-none pb-4">
-            <Game canvasRef={canvasRef} />
+            <Background />
+            <div className="z-10">
+                <Game canvasRef={canvasRef} />
+            </div>
         </main>
     )
 }

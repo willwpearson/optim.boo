@@ -205,7 +205,7 @@ export default function Game({ canvasRef }) {
     }, [canvasRef, gameOver]);
 
     return (
-        <div className='bg-black rounded-md'>
+        <div className='bg-black rounded-md shadow-lg shadow-sunflowerLight'>
             <canvas ref={canvasRef} width={325} height={762} />
             <div className='absolute top-0 text-white text-center text-xl mt-2'>Score: {score}</div>
             {gameOver && (
