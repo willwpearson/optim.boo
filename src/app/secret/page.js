@@ -5,6 +5,9 @@ export default function Secret() {
     const [access, setAccess] = useState(false);
     const canvasRef = useRef(null);
 
+    /**
+     * Checks if the user is coming from the home page, if not, redirects them to the home page.
+     */
     useEffect(() => {
         const referrer = document.referrer;
 
