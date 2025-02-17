@@ -2,10 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 
 export default function Game({ canvasRef }) {
     const [score, setScore] = useState(0);
+    const [gameStarted, setGameStarted] = useState(false);
     const [gameOver, setGameOver] = useState(false);
     const isDragging = useRef(false);
 
     useEffect(() => {
+        if (!gameStarted) return;
+
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
         let animationFrameId;
@@ -202,12 +205,19 @@ export default function Game({ canvasRef }) {
             clearInterval(enemyIntervalId);
             clearInterval(spawnRateIncreaseIntervalId);
         };
-    }, [canvasRef, gameOver]);
+    }, [canvasRef, gameOver, gameStarted]);
 
     return (
         <div className='bg-black rounded-md shadow-lg shadow-sunflowerLight'>
             <canvas ref={canvasRef} width={325} height={762} />
             <div className='absolute top-0 text-white text-center text-xl mt-2'>Score: {score}</div>
+            {!gameStarted && (
+                <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center space-y-4 bg-sunflowerLight text-black p-4 rounded-md'>
+                    <p className='text-2xl text-center'>Welcome to secret game!</p>
+                    <p className='text-lg text-center'>How high of a score can you get?</p>
+                    <button onClick={() => setGameStarted(true)} className='bg-violet hover:bg-violetDark text-white px-2 py-1 rounded'>Start</button>
+                </div>
+            )}
             {gameOver && (
                 <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center space-y-4 bg-sunflowerLight text-black p-8 rounded-md'>
                     <p className='text-2xl text-center'>Game Over!</p>
