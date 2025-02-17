@@ -40,12 +40,20 @@ export default function Background() {
 
     const resizeCanvas = () => {
         const canvas = canvasRef.current;
+        const currentWidth = canvas.width;
+        const currentHeight = canvas.height;
+
+        // Check if the resize event is due to a zoom action
+        if (window.innerWidth === currentWidth && window.innerHeight === currentHeight) {
+            return;
+        }
+
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
         drawStars();
     }
-
+    
     const handleCanvasClick = (e) => {
         if (redStar) {
             const x = e.clientX;
