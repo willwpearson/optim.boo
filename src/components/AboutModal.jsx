@@ -125,7 +125,7 @@ export default function AboutModal({ isOpen, returnHome }) {
                     <div className="text-center">
                         <h3 className="text-xl sm:text-2xl font-bold text-violet mb-4 sm:mb-6">Technologies I Love</h3>
                         <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-                            {['React', 'Next.js', 'Node.js', 'Python', 'Docker', 'Linux', 'IoT', 'Microservices', 'TypeScript', 'Tailwind CSS'].map((tech, index) => (
+                            {['React', 'Next.js', '.NET', 'Python', 'Docker', 'Linux', 'IoT', 'Microservices', 'TypeScript', 'Tailwind CSS'].map((tech, index) => (
                                 <span
                                     key={tech}
                                     className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-violet/20 to-sunsetOrange/20 rounded-full text-white/90 text-xs sm:text-sm font-medium hover:from-violet/30 hover:to-sunsetOrange/30 transition-all duration-300 cursor-default hover:scale-105"
