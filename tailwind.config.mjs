@@ -30,6 +30,20 @@ export default {
         sunsetOrange: "#FF4500",
         sunsetOrangeDark: "#FF6347",
       },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'twinkle': 'twinkle 3s infinite alternate',
+        'gradient': 'gradient-shift 4s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 2s infinite',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(134, 74, 249, 0.3)',
+        'glow-orange': '0 0 20px rgba(255, 69, 0, 0.3)',
+        'glow-lg': '0 0 30px rgba(134, 74, 249, 0.4)',
+      }
     },
   },
   plugins: [],
