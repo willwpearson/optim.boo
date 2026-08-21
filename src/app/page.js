@@ -156,7 +156,7 @@ export default function Home() {
             variants={heroItem}
             className="text-textSecondary text-lg sm:text-xl mb-6 leading-relaxed"
           >
-            Software Development Engineer — Web Development, Full-Stack, Systems &amp; Health Tech
+            Software Development Engineer -- Web Development, Full-Stack, Systems &amp; Health Tech
           </motion.h2>
           <motion.p
             variants={heroItem}
@@ -232,14 +232,14 @@ export default function Home() {
             <p>
               I recently joined Signify Health as a Software Development Engineer II, working on
               the health-tech platform that connects patients and providers. Before that, I spent
-              several years at Xenter building medical IoT devices — writing software, Bluetooth
+              several years at Xenter building medical IoT devices: writing software, Bluetooth
               stacks, and microservice systems that had to work reliably in clinical
               environments where failure wasn&apos;t an option.
             </p>
             <p>
               I studied at the University of Utah, where I first got serious about software
-              engineering. That range — from low-level systems to enterprise health-tech
-              — is something I lean into deliberately. I like understanding the full picture, from
+              engineering. That range, from low-level systems to enterprise health-tech,
+              is something I lean into deliberately. I like understanding the full picture, from
               the hardware talking on a wire to the dashboard a clinician reads. If you need
               someone who can move between layers of the stack without losing the thread, that&apos;s
               where I&apos;m most useful.
@@ -257,7 +257,7 @@ export default function Home() {
           </h2>
           <div className="w-12 h-0.5 bg-accent mb-4" />
           <p className="text-textSecondary mb-10 max-w-lg">
-            Available for contract and consulting work. Reach out directly — I respond to every
+            Available for contract and consulting work. Reach out directly. I respond to every
             genuine inquiry.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
